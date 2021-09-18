@@ -44,10 +44,12 @@ namespace CFlamingo
         /// </summary>
         public double WindowMinimumHeight { get; set; } = 400;
 
+        public bool Borderless { get { return mWindow.WindowState == WindowState.Maximized; } }
+
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder { get; set; } = 6;
+        public int ResizeBorder { get { return Borderless ? 0 : 6; } }
 
         /// <summary>
         /// Size of the resize border around the windows takes into acount of outer margin
@@ -57,7 +59,7 @@ namespace CFlamingo
         /// <summary>
         /// Padding of the Inner Content of the main window
         /// </summary>
-        public Thickness InnerContentPadding { get { return new Thickness(ResizeBorder); } }
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
         /// <summary>
         /// margin around the window to allow for the drop shadow
@@ -110,10 +112,15 @@ namespace CFlamingo
         /// </summary>
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
 
+        /// <summary>
+        /// Current Page of Application
+        /// </summary>
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+
         #endregion
 
         #region Commands
-        
+
         /// <summary>
         /// Command to minimize the window
         /// </summary>
