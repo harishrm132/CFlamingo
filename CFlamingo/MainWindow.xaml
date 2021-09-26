@@ -125,8 +125,15 @@
             />
         
     </WindowChrome.WindowChrome>
+
+    <Border Background="{StaticResource WordBlueBrush}">
+        <Grid>
+            <!--Background with Image-->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" Stretch="UniformToFill" ImageSource="/Images/Backgrounds/emoji-background.png"/>
+            </Grid.Background>
+            <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
+        </Grid>
+    </Border>
     
-    <Grid Background="{StaticResource ForegroundLightBrush}">
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
-    </Grid>
 </Window>
