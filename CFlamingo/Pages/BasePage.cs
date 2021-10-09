@@ -9,8 +9,15 @@ namespace CFlamingo
     /// <summary>
     /// BAse Page for all the pages to gain functionality
     /// </summary>
-    public class BasePage : Page
+    public class BasePage<VM> : Page
+        where VM : BaseViewModel, new()
     {
+
+        /// <summary>
+        /// View Model Associated with Page
+        /// </summary>
+        private VM mViewModel;
+
         #region Public Props
         /// <summary>
         /// Animation when page is loaded
@@ -27,8 +34,26 @@ namespace CFlamingo
         /// </summary>
         public float SlideSeconds { get; set; } = 0.8f;
 
+        /// <summary>
+        /// View Model Associated with Page
+        /// </summary>
+        public VM ViewModel 
+        { 
+            get { return mViewModel; } 
+            set 
+            {
+                //if nothing has changed, return
+                if (mViewModel == value) return;
+                //Update the value
+                mViewModel = value;
+                //Set Datacontext
+                this.DataContext = mViewModel;
+            } 
+        }
+
         #endregion
 
+        #region Constructor
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -39,8 +64,13 @@ namespace CFlamingo
                 this.Visibility = Visibility.Collapsed;
 
             this.Loaded += BasePage_Loaded;
-        }
 
+            //Create a default view model
+            this.ViewModel = new VM();
+        } 
+        #endregion
+
+        #region Animation Load/UnLoad
         /// <summary>
         /// Once Page is Loaded Peform Animation
         /// </summary>
@@ -60,7 +90,7 @@ namespace CFlamingo
             if (this.PageLoadAnimation == PageAnimation.None)
                 return;
 
-            switch (this.PageLoadAnimation) 
+            switch (this.PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
                     await this.SlideAndFadeInFromRight(this.SlideSeconds);
@@ -77,7 +107,7 @@ namespace CFlamingo
             if (this.PageUnloadAnimation == PageAnimation.None)
                 return;
 
-            switch (this.PageUnloadAnimation) 
+            switch (this.PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
                     await this.SlideAndFadeOuttoLeft(this.SlideSeconds);
@@ -85,6 +115,7 @@ namespace CFlamingo
             }
         }
 
+        #endregion
 
     }
 }
