@@ -14,6 +14,11 @@ namespace CFlamingo
         /// <summary>
         /// Initial Login Page
         /// </summary>
-        Login = 0
+        Login = 0,
+
+        /// <summary>
+        /// Main Chat page
+        /// </summary>
+        Chat = 1
     }
 }

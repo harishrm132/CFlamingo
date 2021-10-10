@@ -37,7 +37,7 @@ namespace CFlamingo
         /// <summary>
         /// Smallest Wdith of window
         /// </summary>
-        public double WindowMinimumWidth { get; set; } = 400;
+        public double WindowMinimumWidth { get; set; } = 800;
 
         /// <summary>
         /// Smallest Height of window
@@ -115,7 +115,7 @@ namespace CFlamingo
         /// <summary>
         /// Current Page of Application
         /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         #endregion
 

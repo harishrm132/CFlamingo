@@ -24,5 +24,9 @@
     <system:Double x:Key="FontSizeSmall">14</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
 
-
+    <system:String x:Key="FAChatIcon" >&#xf086;</system:String>
+    <system:String x:Key="FAUserIcon" >&#xf007;</system:String>
+    <system:String x:Key="FAPictureIcon" >&#xf1c5;</system:String>
+    <system:String x:Key="FACogIcon" >&#xf013;</system:String>
+        
 </ResourceDictionary>

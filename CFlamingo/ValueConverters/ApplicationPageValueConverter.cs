@@ -20,7 +20,10 @@ namespace CFlamingo
             {
                 case ApplicationPage.Login:
                     return new LoginPage();
-                    break;
+
+                case ApplicationPage.Chat:
+                    return new ChatPage();
+
                 default:
                     Debugger.Break();
                     return null;
