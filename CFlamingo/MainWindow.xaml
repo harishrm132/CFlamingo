@@ -142,7 +142,9 @@
             
             <!--Side Menu Control-->
             <local:SideMenuControl>
-                
+
+                <local:ChatListControl VerticalAlignment="Top"/>
+
             </local:SideMenuControl>
             
         </Grid>

@@ -25,5 +25,10 @@ namespace CFlamingo
             InitializeComponent();
             this.DataContext = new WindowViewModel(this);
         }
+
+        private void SideMenuControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
