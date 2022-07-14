@@ -140,7 +140,10 @@
             </Grid.Background>
             
             <Frame Grid.Column="1" x:Name="MainFrame" 
-                   Content="{Binding applicationViewModel.CurrentPage, ElementName=AppWindow, Converter={local:ApplicationPageValueConverter}}"/>
+                   Content="{Binding ApplicationViewModel.CurrentPage, 
+                                Source={x:Static local:ViewModelLocator.Instance}, 
+                                Converter={local:ApplicationPageValueConverter}}" 
+                   Background="Transparent" />
             
             <!--Side Menu Control-->
             <local:SideMenuControl>
@@ -148,7 +151,7 @@
                 <local:ChatListControl VerticalAlignment="Top"/>
 
             </local:SideMenuControl>
-            
+
         </Grid>
     </Border>
     

@@ -73,7 +73,8 @@ namespace CFlamingo.Core
         /// <returns></returns>
         public async Task RegisterAsync()
         {
-            //TODO : Go to Register page
+            //Go to Register page
+            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
             await Task.Delay(1);
         }
     }
