@@ -5,7 +5,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// Interface for class that can provide secure password

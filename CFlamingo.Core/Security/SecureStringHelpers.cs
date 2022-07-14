@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security;
 using System.Runtime.InteropServices;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// Helpers for <see cref="SecureString"/> class

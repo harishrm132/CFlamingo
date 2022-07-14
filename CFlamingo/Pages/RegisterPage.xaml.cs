@@ -18,13 +18,18 @@ using System.Windows.Shapes;
 namespace CFlamingo
 {
     /// <summary>
-    /// Interaction logic for ChatPage.xaml
+    /// Interaction logic for RegisterPage.xaml
     /// </summary>
-    public partial class ChatPage : BasePage<LoginPageViewModel>
+    public partial class RegisterPage : BasePage<LoginPageViewModel>, IHavePassword
     {
-        public ChatPage()
+        public RegisterPage()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Secure pasword for login page
+        /// </summary>
+        public SecureString SecurePassword => PasswordText.SecurePassword;
     }
 }

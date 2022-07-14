@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CFlamingo.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace CFlamingo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ApplicationViewModel applicationViewModel => new ApplicationViewModel();
+
         public MainWindow()
         {
             InitializeComponent();

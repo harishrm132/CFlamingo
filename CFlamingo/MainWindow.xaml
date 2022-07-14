@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CFlamingo"
+        xmlns:core="clr-namespace:CFlamingo.Core;assembly=CFlamingo.Core"
         mc:Ignorable="d" Icon="Images/Logo/flamingo-small.png" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" x:Name="AppWindow"
         MinWidth="{Binding WindowMinimumWidth}" MinHeight="{Binding WindowMinimumHeight}"
         Title="Welcome, friend!" Height="600" Width="900">
@@ -138,7 +139,8 @@
                 <ImageBrush TileMode="Tile" Stretch="UniformToFill" ImageSource="/Images/Backgrounds/emoji-background.png"/>
             </Grid.Background>
             
-            <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"/>
+            <Frame Grid.Column="1" x:Name="MainFrame" 
+                   Content="{Binding applicationViewModel.CurrentPage, ElementName=AppWindow, Converter={local:ApplicationPageValueConverter}}"/>
             
             <!--Side Menu Control-->
             <local:SideMenuControl>

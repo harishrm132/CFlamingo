@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CFlamingo.Core;
+using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -78,14 +79,14 @@ namespace CFlamingo
         /// <param name="e"></param>
         private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            await AnimateIn();
+             await AnimateInAsync();
         }
 
         /// <summary>
         /// Animates in this page
         /// </summary>
         /// <returns></returns>
-        public async Task AnimateIn()
+        public async Task AnimateInAsync()
         {
             if (this.PageLoadAnimation == PageAnimation.None)
                 return;
@@ -93,7 +94,7 @@ namespace CFlamingo
             switch (this.PageLoadAnimation)
             {
                 case PageAnimation.SlideAndFadeInFromRight:
-                    await this.SlideAndFadeInFromRight(this.SlideSeconds);
+                    await this.SlideAndFadeInFromRightAsync(this.SlideSeconds);
                     break;
             }
         }
@@ -110,7 +111,7 @@ namespace CFlamingo
             switch (this.PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOuttoLeft(this.SlideSeconds);
+                    await this.SlideAndFadeOuttoLeftAsync(this.SlideSeconds);
                     break;
             }
         }

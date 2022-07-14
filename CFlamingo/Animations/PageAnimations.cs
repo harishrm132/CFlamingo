@@ -20,7 +20,7 @@ namespace CFlamingo
         /// <param name="page">page to animate</param>
         /// <param name="seconds">total animation seconds</param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromRight(this Page page, float seconds)
+        public static async Task SlideAndFadeInFromRightAsync(this Page page, float seconds)
         {
             var sb = new Storyboard();
             sb.AddSlideFromRight(seconds, page.WindowWidth);
@@ -36,7 +36,7 @@ namespace CFlamingo
         /// <param name="page">page to animate</param>
         /// <param name="seconds">total animation seconds</param>
         /// <returns></returns>
-        public static async Task SlideAndFadeOuttoLeft(this Page page, float seconds)
+        public static async Task SlideAndFadeOuttoLeftAsync(this Page page, float seconds)
         {
             var sb = new Storyboard();
             sb.AddSlideToLeft(seconds, page.WindowWidth);

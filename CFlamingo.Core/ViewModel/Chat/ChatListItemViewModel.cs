@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// View Model for each chat list item in the overview chat list

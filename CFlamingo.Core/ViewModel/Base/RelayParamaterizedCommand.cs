@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// Basic command that runs on action
     /// </summary>
-    public class RelayCommand : ICommand
+    public class RelayParamaterizedCommand : ICommand
     {
         /// <summary>
         /// Action to run
+        /// Action to run
         /// </summary>
-        private Action mAction;
+        private Action<object> mAction;
 
         /// <summary>
         /// Event that fired when the <see cref="CanExecute(object)"/> method value has changed
@@ -21,7 +22,7 @@ namespace CFlamingo
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public RelayCommand(Action action)
+        public RelayParamaterizedCommand(Action<object> action)
         {
             mAction = action;
         }
@@ -42,7 +43,7 @@ namespace CFlamingo
         /// <param name="parameter"></param>
         public void Execute(object parameter)
         {
-            mAction();
+            mAction(parameter);
         }
     }
 }

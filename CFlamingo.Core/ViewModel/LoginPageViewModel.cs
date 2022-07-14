@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// View Model For Login Page
@@ -35,6 +35,11 @@ namespace CFlamingo
         /// </summary>
         public ICommand LoginCommand { get; set; }
 
+        /// <summary>
+        /// Command to Regiser for a new account
+        /// </summary>
+        public ICommand RegisterCommand { get; set; }
+
         #endregion
 
         /// <summary>
@@ -42,7 +47,8 @@ namespace CFlamingo
         /// </summary>
         public LoginPageViewModel()
         {
-            LoginCommand = new RelayParamaterizedCommand(async (parameter) => await Login(parameter));
+            LoginCommand = new RelayParamaterizedCommand(async (parameter) => await LoginAsync(parameter));
+            RegisterCommand = new RelayCommand(async () => await RegisterAsync());
         }
 
         /// <summary>
@@ -50,7 +56,7 @@ namespace CFlamingo
         /// </summary>
         /// <param name="parameter">The <see cref="SecureString"/> passed in to view for user passowrd</param>
         /// <returns></returns>
-        public async Task Login(object parameter)
+        public async Task LoginAsync(object parameter)
         {
             await RunCommand(() => this.LoginIsRunning, async () =>
             {
@@ -59,6 +65,16 @@ namespace CFlamingo
                 // TODO - IMPORTANT: Dont store password in Variable
                 var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
+        }
+        
+        /// <summary>
+        /// Takes the user to the register page
+        /// </summary>
+        /// <returns></returns>
+        public async Task RegisterAsync()
+        {
+            //TODO : Go to Register page
+            await Task.Delay(1);
         }
     }
 }

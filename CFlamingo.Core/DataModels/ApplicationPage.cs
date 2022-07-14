@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// Page of application
@@ -19,6 +19,11 @@ namespace CFlamingo
         /// <summary>
         /// Main Chat page
         /// </summary>
-        Chat = 1
+        Chat = 1,
+
+        /// <summary>
+        /// The Register Page
+        /// </summary>
+        Register = 2
     }
 }

@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFlamingo
+namespace CFlamingo.Core
 {
     /// <summary>
     /// Helper for Expression
